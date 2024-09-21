@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import DataCarouselSlider from '../../DataCarousel/DataCarouselSlider';
+import DataCarouselSlider from '../../Data/DataCarouselSlider';
 import { CarouselItemContent } from '../Carousel/CarouselItemContent';
 
 export function CarouselSlider() {

@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { CardIntroContent } from './CardIntroContent';
-import DataCardIntro from '../../DataCarousel/DataCardIntro';
+import DataCardIntro from '../../Data/DataCardIntro';
 
 
 export const CardIntro = () => {

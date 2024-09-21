@@ -1,22 +1,21 @@
-import './App.css'
-import { CardIntro } from './components/Card-Intro/CardIntro'
-import { CardInverted } from './components/card-inverted-border/cardInverted'
-import { CarouselSlider } from './components/Carousel/CarouselSlider'
-import { NavBarComp } from './components/NavBarComp'
-import { CardInferior } from './components/cardinferior/CardInferior'
-import { Map } from './components/Maps/Map'
-import { FooterComponent } from './components/footer/FooterComponent'
+import './App.css';
+import { NavBarComp } from './components/NavBarComp';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from '../src/pages/Home';
+import { Nosotros } from '../src/pages/Nosotros';
+import { Contacto } from '../src/pages/Contacto';
+import { Conmmutadores } from './pages/Conmmutadores';
 function App() {
   
   return (
     <div className="Contenedor-app-padre">
       <NavBarComp />
-      <CarouselSlider />
-      <CardInverted />
-      <CardIntro />
-      <CardInferior />
-      <Map/>
-      <FooterComponent />
+      <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/Nosotros" element={<Nosotros />}></Route>
+      <Route path="/Contacto" element={<Contacto />}></Route>
+      <Route path="/Conmmutadores" element={<Conmmutadores />}></Route>
+      </Routes>
     </div>
   )
 }

@@ -5,12 +5,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import dataLogo from '../../assets/images/logo.png'
-import ListGroup from 'react-bootstrap/ListGroup';
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { FaRegClock } from "react-icons/fa";
-import Accordion from 'react-bootstrap/Accordion';
+import DataFooter from '../../Data/DataFooter';
+
 
 export const FooterComponent = () => {
     return (
@@ -31,6 +31,7 @@ export const FooterComponent = () => {
                         </Col>
                     </Row>
                 </Container>
+
             </div>
             <hr className="hr-footer" />
             <div className="footer-bg">
@@ -46,48 +47,52 @@ export const FooterComponent = () => {
                                         alt="React Bootstrap logo"
                                     />
                                 </a>
-                                <div className="div-lista-contenedor">
-                                    <div className="div-lista-title d-flex align-items-center">
-                                        <HiOutlineOfficeBuilding className="footer-icon" />
-                                        <h4>Dirección</h4>
-                                    </div>
-                                    <p>Calle 4 No. 59 por 5 y 7 Col. Felipe Carrillo Puerto <br /> CP 97136 Mérida, Yucatán, México</p>
-                                </div>
-                                <div className="div-lista-contenedor">
-                                    <div className="div-lista-title d-flex align-items-center">
-                                        <FaPhoneAlt className="footer-icon" />
-                                        <h4>Conmutador</h4>
-                                    </div>
-                                    <p>(999) 2875920</p>
-                                </div>
-                                <div className="div-lista-contenedor">
-                                    <div className="div-lista-title d-flex align-items-center">
-                                        <h4>Departamento de Ventas</h4>
-                                    </div>
-                                    <p>Extensión: 602</p>
-                                    <div className="d-flex align-items-center data-extra-dpto">
-                                        <CiMail className="mini-logo-footer" />
-                                        <p><strong>Email:</strong> ventas@datacomsureste.com.mx</p>
-                                    </div>
-                                </div>
-                                <div className="div-lista-contenedor">
-                                    <div className="div-lista-title d-flex align-items-center">
-                                        <h4>Departamento de Proyectos</h4>
-                                    </div>
-                                    <p>Extensión: 601</p>
-                                    <div className="d-flex align-items-center data-extra-dpto">
-                                        <CiMail className="mini-logo-footer" />
-                                        <p><strong>Email:</strong> marco@datacomsureste.com.mx</p>
-                                    </div>
-                                </div>
-                                <div className="div-lista-contenedor">
-                                    <div className="div-lista-title d-flex align-items-center">
-                                        <FaRegClock className="footer-icon" />
-                                        <h4>Horario</h4>
-                                    </div>
-                                    <p>Lunes - Viernes: 9:00 AM - 18:00 PM</p>
-                                    <p>Sábado: 9:00 AM - 13:00 PM</p>
-                                </div>
+                                {DataFooter.map((ContentFooter) => (
+                                    <React.Fragment key={ContentFooter.id}>
+                                        <div className="div-lista-contenedor">
+                                            <div className="div-lista-title d-flex align-items-center">
+                                                <HiOutlineOfficeBuilding className="footer-icon" />
+                                                <h4>Dirección</h4>
+                                            </div>
+                                            <a href={ContentFooter.linkdireccion}><p>{ContentFooter.direccion}</p></a>
+                                        </div>
+                                        <div className="div-lista-contenedor">
+                                            <div className="div-lista-title d-flex align-items-center">
+                                                <FaPhoneAlt className="footer-icon" />
+                                                <h4>Conmutador</h4>
+                                            </div>
+                                            <a href={ContentFooter.telefonolink}><p>{ContentFooter.telefono}</p></a>
+                                        </div>
+                                        <div className="div-lista-contenedor">
+                                            <div className="div-lista-title d-flex align-items-center">
+                                                <h4>Departamento de Ventas</h4>
+                                            </div>
+                                            <p>Extensión: 602</p>
+                                            <div className="d-flex align-items-center data-extra-dpto">
+                                                <CiMail className="mini-logo-footer" />
+                                                <a href={ContentFooter.ventasemaillink}><p><strong>Email: </strong>{ContentFooter.ventasemail}</p></a>
+                                            </div>
+                                        </div>
+                                        <div className="div-lista-contenedor">
+                                            <div className="div-lista-title d-flex align-items-center">
+                                                <h4>Departamento de Proyectos</h4>
+                                            </div>
+                                            <p>Extensión: 601</p>
+                                            <div className="d-flex align-items-center data-extra-dpto">
+                                                <CiMail className="mini-logo-footer" />
+                                                <a href={ContentFooter.proyectosemaillink}><p><strong>Email: </strong>{ContentFooter.proyectosmail}</p></a>
+                                            </div>
+                                        </div>
+                                        <div className="div-lista-contenedor">
+                                            <div className="div-lista-title d-flex align-items-center">
+                                                <FaRegClock className="footer-icon" />
+                                                <h4>Horario</h4>
+                                            </div>
+                                            <p>Lunes - Viernes: 9:00 AM - 18:00 PM</p>
+                                            <p>Sábado: 9:00 AM - 13:00 PM</p>
+                                        </div>
+                                    </React.Fragment>
+                                ))}
                             </div>
                         </Col>
                         <Col xs={{ order: 2, span: 12 }} sm={{ order: 2, span: 2 }}>
